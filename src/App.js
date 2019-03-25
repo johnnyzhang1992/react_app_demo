@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Calculator from './components/Calculator';
 import { Button } from 'antd-mobile';
+import Email from './components/Email'
 // import Comment from './components/comment'
 // import Clock from './components/Clock'
 // import TodoList from './components/TodoList'
@@ -99,6 +100,7 @@ class App extends Component {
 				<p><Button inline size="small" type="primary" onClick={this.updateLikeState}>Change like State</Button></p>
 				{/*温度器*/}
 				<Calculator></Calculator>
+				<Email/>
 			</div>
 		);
 	}
