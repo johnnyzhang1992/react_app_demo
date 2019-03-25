@@ -22,3 +22,13 @@
 ### `serve -s build`
 
 在浏览器中打开 [http://localhost:5000/](http://localhost:5000/) 查看 `prod` 模式下的页面.
+
+### demo
+
+> components -> Calculator || BoilingVerdict
+
+父组件向子组件传值
+
+> components -> Email
+
+子组件向父组件传值
