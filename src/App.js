@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Calculator from './components/Calculator';
+// import Calculator from './components/Calculator';
 import { Button } from 'antd-mobile';
 import Email from './components/Email'
 // import Comment from './components/comment'
@@ -99,7 +99,7 @@ class App extends Component {
 				<p style={style}>Like sate {this.state.liked ? 'Liked' : 'UnLiked'}</p>
 				<p><Button inline size="small" type="primary" onClick={this.updateLikeState}>Change like State</Button></p>
 				{/*温度器*/}
-				<Calculator></Calculator>
+				{/* <Calculator></Calculator> */}
 				<Email/>
 			</div>
 		);
