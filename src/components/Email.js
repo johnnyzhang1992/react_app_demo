@@ -6,29 +6,15 @@
 // 子组件向父组件传值
 
 // 方法：父组件将改变state的函数名传给子组件，该函数检测子组件内容变化
+// ref set on parent Component
 import React,{Component} from 'react';
 import {Button} from 'antd-mobile';
 class Child extends Component{
-    constructor(props) {
-        super(props);
-        // ref
-        this.textInput = null;
-        this.inputFocus = this.inputFocus.bind(this);
-        this.setTextInputRef = element => {
-            this.textInput = element;
-        };
-    }
-    inputFocus(){
-        console.log(this.textInput.value);
-        this.textInput.focus();
-    }
     render(){
         return (
             <div>
-                请输入邮箱：<input ref={this.setTextInputRef} value={this.props.email} onChange={this.props.handleEmail}/>
-                <p>
-                    <Button inline size="small" type="primary" onClick={this.inputFocus}>Input Focus</Button>
-                </p>
+                请输入邮箱：<input ref={this.props.inputRef} value={this.props.email} onChange={this.props.handleEmail}/>
+                <p> <Button inline size="small" type="primary" onClick={this.props.inputFocus}>Input Focus</Button></p>
             </div>
         )
     }
@@ -40,7 +26,14 @@ export default class Email extends Component{
         super(props);
         this.state = {
             email: 'me@johnny.cn'
-        }
+        };
+        // ref
+        this.textInput = null;
+        this.inputFocus = this.inputFocus.bind(this);
+    }
+    inputFocus(){
+        console.log(this.textInput.value);
+        this.textInput.focus();
     }
 
     handleEmail(e){
@@ -55,7 +48,7 @@ export default class Email extends Component{
         return (
             <div style={style}>
                 <div>用户邮箱：{this.state.email}</div>
-                <Child name="email" email={this.state.email} handleEmail={this.handleEmail.bind(this)}/>
+                <Child inputRef={el=>{this.textInput = el}} inputFocus={this.inputFocus} name="email" email={this.state.email} handleEmail={this.handleEmail.bind(this)}/>
             </div>
         )
     }
