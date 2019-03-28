@@ -7,13 +7,28 @@
 
 // 方法：父组件将改变state的函数名传给子组件，该函数检测子组件内容变化
 import React,{Component} from 'react';
-
+import {Button} from 'antd-mobile';
 class Child extends Component{
-
+    constructor(props) {
+        super(props);
+        // ref
+        this.textInput = null;
+        this.inputFocus = this.inputFocus.bind(this);
+        this.setTextInputRef = element => {
+            this.textInput = element;
+        };
+    }
+    inputFocus(){
+        console.log(this.textInput.value);
+        this.textInput.focus();
+    }
     render(){
         return (
             <div>
-                请输入邮箱：<input value={this.props.email} onChange={this.props.handleEmail}/>
+                请输入邮箱：<input ref={this.setTextInputRef} value={this.props.email} onChange={this.props.handleEmail}/>
+                <p>
+                    <Button inline size="small" type="primary" onClick={this.inputFocus}>Input Focus</Button>
+                </p>
             </div>
         )
     }
