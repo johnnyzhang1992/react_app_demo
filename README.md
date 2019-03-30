@@ -1,3 +1,5 @@
+# React and React-Redux learn demo
+
 此项目是通过 [Create React App](https://github.com/facebook/create-react-app) 创建的.
 
 ## Available Scripts

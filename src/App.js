@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/Header';
+// import { Button } from 'antd-mobile';
+import CountPanel from './react-redux/components/CountPanel';
+// css put to bottom
 import './App.css';
-import { Button } from 'antd-mobile';
-
 class App extends Component {
 	// eslint-disable-next-line no-useless-constructor
 	constructor(props){
 		super(props);
 		this.state= {
-			liked: false,
-			counter: 0,
-			showWarning: true
+
 		};
-		this.handleToggleClick = this.handleToggleClick.bind(this);
-		this.updateLikeState = this.updateLikeState.bind(this);
 	}
 
 	// 组件更新前调用
@@ -36,32 +33,12 @@ class App extends Component {
 	// 卸载组件
 	componentWillUnmount() {
 	}
-
-	handleToggleClick() {
-		this.setState(prevState => ({
-			showWarning: !prevState.showWarning
-		}));
-	}
-	updateLikeState(e){
-		this.setState((prevState)=>({
-			liked: !prevState.liked,
-			counter: prevState.counter+1
-		}));
-		console.log(`state: ${this.state.liked},counter ${this.state.counter}`)
-	}
 	// 渲染函数，返回 virtualDOM
 	render() {
-		let style= {
-			lineHeight: '30px'
-		};
 		return (
 			<div className="App">
 				<Header logo={logo} />
-				{/*like state*/}
-				<div className="like-section">
-					<p style={style}>Like sate {this.state.liked ? 'Liked' : 'UnLiked'}</p>
-					<p><Button inline size="small" type="primary" onClick={this.updateLikeState}>Change like State</Button></p>
-				</div>
+				<CountPanel></CountPanel>
 			</div>
 		);
 	}

@@ -34,6 +34,12 @@ span.bold{
   margin: 3vh 0;
   background-color: yellow;
 }
+.am-button{
+  overflow: inherit;
+  margin-right: 10px;
+  height: 35px;
+  line-height: 35px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
