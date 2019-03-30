@@ -1,34 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Header from './components/Header';
 import './App.css';
-// import Calculator from './components/Calculator';
 import { Button } from 'antd-mobile';
-import Email from './components/Email'
-// import Comment from './components/comment'
-// import Clock from './components/Clock'
-// import TodoList from './components/TodoList'
-// import From from './components/Form'
 
-// const comment1 = {
-// 	date: new Date(),
-// 	text: 'I hope you enjoy learning React!',
-// 	author: {
-// 		name: 'Hello Kitty',
-// 		avatarUrl: 'http://placekitten.com/g/64/64'
-// 	}
-// 	};
-// 	function WarningBanner(props) {
-// 	if (!props.warn) {
-// 		return null;
-// 	}
-	
-// 	return (
-// 		<div className="warning">
-// 		Warning!
-// 		</div>
-// 	);
-// 	}
-	
 class App extends Component {
 	// eslint-disable-next-line no-useless-constructor
 	constructor(props){
@@ -81,26 +56,12 @@ class App extends Component {
 		};
 		return (
 			<div className="App">
-				<header className="App-header">
-					<img src={logo} className="App-logo" alt="logo" />
-					<p>
-						Edit <code>src/App.js</code> and save to reload.
-					</p>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Learn React
-					</a>
-				</header>
+				<Header logo={logo} />
 				{/*like state*/}
-				<p style={style}>Like sate {this.state.liked ? 'Liked' : 'UnLiked'}</p>
-				<p><Button inline size="small" type="primary" onClick={this.updateLikeState}>Change like State</Button></p>
-				{/*温度器*/}
-				{/* <Calculator></Calculator> */}
-				<Email/>
+				<div className="like-section">
+					<p style={style}>Like sate {this.state.liked ? 'Liked' : 'UnLiked'}</p>
+					<p><Button inline size="small" type="primary" onClick={this.updateLikeState}>Change like State</Button></p>
+				</div>
 			</div>
 		);
 	}

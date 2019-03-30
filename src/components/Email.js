@@ -20,7 +20,7 @@ class Child extends Component{
     }
 }
 
-export default class Email extends Component{
+class Email extends Component{
 
     constructor(props){
         super(props);
@@ -53,3 +53,5 @@ export default class Email extends Component{
         )
     }
 }
+
+export default Email;

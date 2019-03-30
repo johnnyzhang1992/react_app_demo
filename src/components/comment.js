@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import UserInfo from './userinfo';
 
+// const comment1 = {
+// 	date: new Date(),
+// 	text: 'I hope you enjoy learning React!',
+// 	author: {
+// 		name: 'Hello Kitty',
+// 		avatarUrl: 'http://placekitten.com/g/64/64'
+// 	}
+// 	};
   function formatDate(date) {
     return date.toLocaleDateString();
   }
