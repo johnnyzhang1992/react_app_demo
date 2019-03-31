@@ -23,7 +23,7 @@ class CountPanel extends Component{
                 <Counter caption="First" initValue={this.state.initValue[0]} onUpdate={this.computerToltalCount}></Counter>
                 <Counter caption="Second" initValue={this.state.initValue[1]} onUpdate={this.computerToltalCount}></Counter>
                 <Counter caption="Third" initValue={this.state.initValue[2]} onUpdate={this.computerToltalCount}></Counter>
-                <p>Total: {this.state.total}</p>
+                <p>Total count: {this.state.total}</p>
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/Header';
 // import { Button } from 'antd-mobile';
-import CountPanel from './react-redux/components/CountPanel';
+import CountPanel from './react-flux/views/CountPanel';
 // css put to bottom
 import './App.css';
 class App extends Component {
