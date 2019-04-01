@@ -1,7 +1,6 @@
 .todos {
   width: 500px;
   margin: 0 auto;
-  padding-top: 50px;
   font-size: 30px;
 }
 
@@ -12,14 +11,14 @@
 .add-todo .new-todo {
   display: block;
   margin: 0 0 0 50px;
-  font-size: 30px;
+  font-size: 25px;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
 
 .add-todo .add-btn {
-  font-size: 30px;
+  font-size: 22px;
   position: absolute;
   top: 0;
   right: 0;
@@ -30,7 +29,7 @@
   /* margin: 0;
   padding: 0; */
 
-  font-size: 30px;
+  font-size: 22px;
   padding-left: 50px;
   margin-top: 20px;
 }

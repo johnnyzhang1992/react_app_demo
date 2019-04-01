@@ -1,6 +1,18 @@
 import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO}from './actionTypes.js';
 
-export default (state = [],action) =>{
+const initValues = [
+    {
+        id: 1,
+        text: 'First Todo',
+        completed: false
+    },
+    {
+        id: 2,
+        text: 'Second Todo',
+        completed: true
+    }
+];
+export default (state = initValues,action) =>{
     switch(action.type){
 
         case ADD_TODO:{
