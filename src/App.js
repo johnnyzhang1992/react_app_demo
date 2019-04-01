@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/Header';
 // import { Button } from 'antd-mobile';
-import CountPanel from './redux/views/CounterPanel'
+import Todo from './todo/index'
 // css put to bottom
 import './App.css';
+
+import './todo/todos/views/style.css'
+import './todo/filter/views/style.css'
 class App extends Component {
 	// eslint-disable-next-line no-useless-constructor
 	constructor(props){
@@ -38,7 +41,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Header logo={logo} />
-				<CountPanel></CountPanel>
+				<Todo />
 			</div>
 		);
 	}

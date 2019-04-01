@@ -1,6 +1,10 @@
-# React and React-Redux learn demo
+# React and Redux learn demo
 
 此项目是通过 [Create React App](https://github.com/facebook/create-react-app) 创建的.
+
+此项目包括一些自己学习 react的一些 demo 和程墨的《深入浅出 React 和 Redux》的一些实例demo
+
+对于后者在源代码的基础上，做了些调整。
 
 ## Available Scripts
 

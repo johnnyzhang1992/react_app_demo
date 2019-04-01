@@ -72,6 +72,8 @@
   ],
   "devDependencies": {
     "babel-plugin-import": "^1.11.0",
+    "prop-types": "^15.7.2",
+    "react-addons-perf": "^15.4.2",
     "react-app-rewired": "2.0.2-next.0",
     "redux": "^4.0.1",
     "redux-devtools": "^3.5.0"
