@@ -1,4 +1,6 @@
-# React and Redux learn demo
+# React and Redux and Router learn demo
+
+`React`,`Reacr-Router`,`Redux`,`React-Redux`
 
 此项目是通过 [Create React App](https://github.com/facebook/create-react-app) 创建的.
 

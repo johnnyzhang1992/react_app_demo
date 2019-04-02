@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/Header';
-// import { Button } from 'antd-mobile';
+//import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {WhiteSpace } from 'antd-mobile';
 import Todo from './todo/index'
+import Email from './components/Email';
 // css put to bottom
 import './App.css';
-
-import './todo/todos/views/style.css'
-import './todo/filter/views/style.css'
 class App extends Component {
 	// eslint-disable-next-line no-useless-constructor
 	constructor(props){
@@ -39,10 +39,20 @@ class App extends Component {
 	// 渲染函数，返回 virtualDOM
 	render() {
 		return (
-			<div className="App">
-				<Header logo={logo} />
-				<Todo />
-			</div>
+			<Router>
+				<div className="App">
+					<Header logo={logo} />
+					<WhiteSpace />
+					<div className="link-list">
+						<Link to="/" replace>Email</Link>
+						<Link to="/todo" replace>Todo list</Link>
+					</div>
+					<WhiteSpace />
+					{/* router */}
+					<Route exact path="/" component={Email} />
+            		<Route path="/todo" component={Todo} />
+				</div>
+			</Router>
 		);
 	}
 }
