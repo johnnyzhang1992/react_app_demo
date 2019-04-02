@@ -9,6 +9,7 @@
 // ref set on parent Component
 import React,{Component} from 'react';
 import {Button} from 'antd-mobile';
+import getUrlParam from '../untils/until'
 class Child extends Component{
     render(){
         return (
@@ -25,7 +26,7 @@ class Email extends Component{
     constructor(props){
         super(props);
         this.state = {
-            email: 'me@johnny.cn'
+            email: getUrlParam(props.location)['email'] ? getUrlParam(props.location)['email'] : 'me@johnny.cn'
         };
         // ref
         this.textInput = null;

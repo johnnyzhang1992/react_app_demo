@@ -53,6 +53,9 @@ span.bold{
   margin-right: 5px;
   border: 1px solid #ddd
 }
+.link-list>a.selected{
+  color: #61dafb;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

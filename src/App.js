@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/Header';
 //import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import {BrowserRouter as Router, Route ,NavLink} from 'react-router-dom'
 import {WhiteSpace } from 'antd-mobile';
 import Todo from './todo/index'
 import Email from './components/Email';
+import Clock from './components/Clock';
 // css put to bottom
 import './App.css';
 class App extends Component {
@@ -44,13 +45,18 @@ class App extends Component {
 					<Header logo={logo} />
 					<WhiteSpace />
 					<div className="link-list">
-						<Link to="/" replace>Email</Link>
-						<Link to="/todo" replace>Todo list</Link>
+						<NavLink to="/" replace>Home</NavLink>
+						<NavLink to={{
+							pathname: "/email",
+							search: '?email=me@johnny.com'
+						}} activeClassName="selected" replace>Email</NavLink>
+						<NavLink to="/todo/1" activeClassName="selected" replace>Todo list</NavLink>
 					</div>
 					<WhiteSpace />
 					{/* router */}
-					<Route exact path="/" component={Email} />
-            		<Route path="/todo" component={Todo} />
+					<Route exact path="/" component={Clock} />
+					<Route path="/email" component={Email} />
+            		<Route path="/todo/:todoId" component={Todo} />
 				</div>
 			</Router>
 		);

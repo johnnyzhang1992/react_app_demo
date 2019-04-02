@@ -7,7 +7,12 @@ import store from './Store.js';
 import './todos/views/style.css';
 import './filter/views/style.css'
 class Todo extends Component{
+    constructor(props){
+        super(props);
+        console.log(`todoId: ${props.match.params.todoId}`);
+    }
     render(){
+  
         return (
             <Provider store={store}>
                 <h1>Todo list Demo</h1>
