@@ -24,4 +24,5 @@ const reducer = combineReducers({
 // );
 
 // export default createStore(reducer, {}, storeEnhancers);
-export default createStore(reducer, {}, );
+// 打开浏览器拓展配置 Redux-DevTools
+export default createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
