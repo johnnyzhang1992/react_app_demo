@@ -4,19 +4,13 @@ import Header from './components/Header';
 //import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import {BrowserRouter as Router, Route ,NavLink} from 'react-router-dom'
 import {WhiteSpace } from 'antd-mobile';
+
 import Todo from './todo/index'
 import Email from './components/Email';
 import Clock from './components/Clock';
 // css put to bottom
 import './App.css';
 class App extends Component {
-	// eslint-disable-next-line no-useless-constructor
-	constructor(props){
-		super(props);
-		this.state= {
-
-		};
-	}
 
 	// 组件更新前调用
 	// 在组件接收到一个新的 prop (更新后)时被调用。

@@ -28,13 +28,13 @@ class Email extends Component{
         this.state = {
             email: getUrlParam(props.location)['email'] ? getUrlParam(props.location)['email'] : 'me@johnny.cn'
         };
-        // ref
-        this.textInput = null;
+        // ref 可以添加到子组件上
+        this.textInput = React.createRef();
         this.inputFocus = this.inputFocus.bind(this);
     }
     inputFocus(){
-        console.log(this.textInput.value);
-        this.textInput.focus();
+        console.log(this.textInput.current.value);
+        this.textInput.current.focus();
     }
 
     handleEmail(e){
@@ -49,7 +49,7 @@ class Email extends Component{
         return (
             <div style={style}>
                 <div>用户邮箱：{this.state.email}</div>
-                <Child inputRef={el=>{this.textInput = el}} inputFocus={this.inputFocus} name="email" email={this.state.email} handleEmail={this.handleEmail.bind(this)}/>
+                <Child inputRef={this.textInput} inputFocus={this.inputFocus} name="email" email={this.state.email} handleEmail={this.handleEmail.bind(this)}/>
             </div>
         )
     }
