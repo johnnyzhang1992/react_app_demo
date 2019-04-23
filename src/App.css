@@ -44,7 +44,11 @@ span.bold{
 .link-list{
   margin-top: 10px;
 }
-.link-list:after{
+.clear:after{
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
   clear:both;
 }
 .link-list>a{

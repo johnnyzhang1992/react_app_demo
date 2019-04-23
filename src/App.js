@@ -38,7 +38,7 @@ class App extends Component {
 				<div className="App">
 					<Header logo={logo} />
 					<WhiteSpace />
-					<div className="link-list">
+					<div className="link-list clear">
 						<NavLink to="/" replace>Home</NavLink>
 						<NavLink to={{
 							pathname: "/email",
