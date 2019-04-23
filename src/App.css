@@ -68,3 +68,24 @@ span.bold{
     transform: rotate(360deg);
   }
 }
+.modal{
+  z-index: 99;
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  background: #fff;
+  opacity: 0.8;   
+}
+.modal .close{
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  font-size: 22px;
+}
+.modal .content{
+  margin-top: 60px;
+  text-align: center;
+  font-size: 22px;
+}
