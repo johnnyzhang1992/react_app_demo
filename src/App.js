@@ -8,6 +8,7 @@ import {WhiteSpace } from 'antd-mobile';
 import Todo from './todo/index'
 import Email from './components/Email';
 import Clock from './components/Clock';
+import ContextDemo from './components/context/context-demo1';
 // css put to bottom
 import './App.css';
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
 	// 卸载组件
 	componentWillUnmount() {
 	}
+
 	// 渲染函数，返回 virtualDOM
 	render() {
 		return (
@@ -45,12 +47,14 @@ class App extends Component {
 							search: '?email=me@johnny.com'
 						}} activeClassName="selected" replace>Email</NavLink>
 						<NavLink to="/todo/1" activeClassName="selected" replace>Todo list</NavLink>
+						<NavLink to="/context">Context Demo</NavLink>
 					</div>
 					<WhiteSpace />
 					{/* router */}
 					<Route exact path="/" component={Clock} />
 					<Route path="/email" component={Email} />
-            		<Route path="/todo/:todoId" component={Todo} />
+					<Route path="/todo/:todoId" component={Todo} />
+					<Route path = "/context" component = {ContextDemo}/>
 				</div>
 			</Router>
 		);
