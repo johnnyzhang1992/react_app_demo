@@ -9,6 +9,7 @@ import Todo from './todo/index'
 import Email from './components/Email';
 import Clock from './components/Clock';
 import ContextDemo from './components/context/context-demo1';
+import MultipleContext from './components/multiple-context/context-demo';
 // css put to bottom
 import './App.css';
 class App extends Component {
@@ -48,13 +49,15 @@ class App extends Component {
 						}} activeClassName="selected" replace>Email</NavLink>
 						<NavLink to="/todo/1" activeClassName="selected" replace>Todo list</NavLink>
 						<NavLink to="/context">Context Demo</NavLink>
+						<NavLink to = "/mul_context" > MultipleContext Context Demo </NavLink>
 					</div>
 					<WhiteSpace />
 					{/* router */}
 					<Route exact path="/" component={Clock} />
 					<Route path="/email" component={Email} />
 					<Route path="/todo/:todoId" component={Todo} />
-					<Route path = "/context" component = {ContextDemo}/>
+					<Route path="/context" component={ContextDemo} />
+					<Route path="/mul_context" component={MultipleContext}></Route>
 				</div>
 			</Router>
 		);
