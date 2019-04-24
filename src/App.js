@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Header from './components/Header';
@@ -10,6 +11,7 @@ import Email from './components/Email';
 import Clock from './components/Clock';
 import ContextDemo from './components/context/context-demo1';
 import MultipleContext from './components/multiple-context/context-demo';
+import MouseTracker from './components/render-props/render-demo'
 // css put to bottom
 import './App.css';
 class App extends Component {
@@ -49,7 +51,8 @@ class App extends Component {
 						}} activeClassName="selected" replace>Email</NavLink>
 						<NavLink to="/todo/1" activeClassName="selected" replace>Todo list</NavLink>
 						<NavLink to="/context">Context Demo</NavLink>
-						<NavLink to = "/mul_context" > MultipleContext Context Demo </NavLink>
+						<NavLink to="/mul_context" > MultipleContext Demo </NavLink>
+						<NavLink to = "/render_props" > Render Props Demo </NavLink>
 					</div>
 					<WhiteSpace />
 					{/* router */}
@@ -58,6 +61,7 @@ class App extends Component {
 					<Route path="/todo/:todoId" component={Todo} />
 					<Route path="/context" component={ContextDemo} />
 					<Route path="/mul_context" component={MultipleContext}></Route>
+					<Route path="/render_props" component={MouseTracker}></Route>
 				</div>
 			</Router>
 		);
