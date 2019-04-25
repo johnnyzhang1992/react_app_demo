@@ -4,16 +4,22 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route , NavLink, Switch} from 'react-router-dom'
 import {WhiteSpace } from 'antd-mobile';
 
+import AsyncComponent from './components/AsyncComponent'
 import logo from './logo.svg';
-import Header from './components/Header';
-import Todo from './todo/index'
-import Email from './components/Email';
-import Clock from './components/Clock';
+// import Header from './components/Header';
+// import Todo from './todo/index'
+// import Email from './components/Email';
+// import Clock from './components/Clock';
 import ContextDemo from './components/context/context-demo1';
 // import MultipleContext from './components/multiple-context/context-demo';
 import MouseTracker from './components/render-props/render-demo'
 // css put to bottom
 import './App.css';
+
+const AsyncHeader = AsyncComponent(() => import('./components/Header'))
+const AsyncTodo = AsyncComponent(()=>import('./todo/index'))
+const AsyncEmail = AsyncComponent(() => import('./components/Email'))
+const AsyncClock = AsyncComponent(() => import('./components/Clock'));
 class App extends Component {
 
 	// 组件更新前调用
@@ -41,7 +47,7 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="App">
-					<Header logo={logo} />
+					<AsyncHeader logo={logo} />
 					<WhiteSpace />
 					<div className="link-list clear">
 						<NavLink to="/" replace>Home</NavLink>
@@ -56,9 +62,9 @@ class App extends Component {
 					<WhiteSpace />
 					{/* router */}
 					<Switch>
-						<Route exact path="/" component={Clock} />
-						<Route path="/email" component={Email} />
-						<Route exact path="/todo" component={Todo} />
+						<Route exact path="/" component={AsyncClock} />
+						<Route path="/email" component={AsyncEmail} />
+						<Route exact path="/todo" component={AsyncTodo} />
 						<Route path="/context" component={ContextDemo} />
 						<Route path="/render_props" component={MouseTracker}></Route>
 					</Switch>
