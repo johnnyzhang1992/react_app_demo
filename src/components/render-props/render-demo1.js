@@ -5,7 +5,7 @@ class Cat extends React.Component {
     render() {
       const mouse = this.props.mouse;
       return (
-        <img src={logo} alt="" style={{ width: '100px',position: 'absolute', left: mouse.x, top: mouse.y }} />
+        <img src={logo} alt="" style={{ width: '50px',position: 'absolute', left: mouse.x, top: mouse.y }} />
       );
     }
   }
@@ -26,7 +26,7 @@ class Cat extends React.Component {
   
     render() {
       return (
-        <div style={{ height: '100%' }} onMouseMove={this.handleMouseMove}>
+        <div style={{ height: '100%',minHeight: '200px' }} onMouseMove={this.handleMouseMove}>
   
           {/*
             Instead of providing a static representation of what <Mouse> renders,
