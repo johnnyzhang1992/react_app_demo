@@ -1,10 +1,13 @@
 # React and Redux and Router learn demo
 
-`React`,`Reacr-Router`,`Redux`,`React-Redux`
-
 此项目是通过 [Create React App](https://github.com/facebook/create-react-app) 创建的.
 
-此项目包括一些自己学习 react的一些 demo 和程墨的《深入浅出 React 和 Redux》的一些实例demo
+## 参考书籍
+
+- 《深入浅出 React 和 Redux》程墨 机械工业出版社
+- 《React 进阶之路》 徐超 清华大学出版社
+
+此项目主要是一些自己学习 `react`、`react-router`、`redux` 的一些 demo
 
 对于后者在源代码的基础上，做了些调整。
 
