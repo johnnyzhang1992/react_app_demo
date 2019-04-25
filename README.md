@@ -53,3 +53,16 @@ webpack 的 config 文件，在 `config` 目录下。
 `webpack.config.js` 中的 365 行左右 `babelrc: true,` false，改为 true。
 
 并且将`package.json` 的最后关于babelrc 相关的配置删掉。因为我们已经在根目录下新建了`.babellrc` 文件，在此文件里面添加相关配置即可。
+
+具体代码如下：
+
+```js
+{
+    "presets": [
+      "react-app"
+    ],
+    "plugins": [
+        ["import", {"libraryName": "antd-mobile", "libraryDirectory": "es", "style": "css"}]
+    ]
+  }
+```
