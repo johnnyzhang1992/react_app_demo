@@ -9,7 +9,9 @@
 
 此项目主要是一些自己学习 `react`、`react-router`、`redux` 的一些 demo
 
-对于后者在源代码的基础上，做了些调整。
+## `config` file
+
+webpack 的 config 文件，在 `config` 目录下。
 
 ## Available Scripts
 
@@ -33,21 +35,13 @@
 
 在浏览器中打开 [http://localhost:5000/](http://localhost:5000/) 查看 `prod` 模式下的页面.
 
-### demo
-
-> components -> Calculator || BoilingVerdict
-
-父组件向子组件传值
-
-> components -> Email
-
 子组件向父组件传值
 
 ### run `npm run eject`
 
 如果执行了 `npm run eject` 命令，那么原始的配置就会发生变化。
 
-```
+``` js
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
