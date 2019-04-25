@@ -7,7 +7,8 @@
 
 // 方法：父组件将改变state的函数名传给子组件，该函数检测子组件内容变化
 // ref set on parent Component
-import React,{Component} from 'react';
+import React, { Component } from 'react';
+import {Route , Link} from 'react-router-dom'
 import {Button} from 'antd-mobile';
 import getUrlParam from '../untils/until'
 class Child extends Component{
@@ -22,16 +23,19 @@ class Child extends Component{
 }
 
 class Email extends Component{
-
     constructor(props){
-        super(props);
+    super(props);
+        const { location,match } =  props;
+        // props => location,match,history
+        this.match = match;
         this.state = {
-            email: getUrlParam(props.location)['email'] ? getUrlParam(props.location)['email'] : 'me@johnny.cn'
+            email: getUrlParam(location)['email'] ? getUrlParam(location)['email'] : 'me@johnny.cn'
         };
         // ref 可以添加到子组件上
         this.textInput = React.createRef();
         this.inputFocus = this.inputFocus.bind(this);
-    }
+}
+    
     inputFocus(){
         console.log(this.textInput.current.value);
         this.textInput.current.focus();
@@ -48,8 +52,18 @@ class Email extends Component{
         };
         return (
             <div style={style}>
-                <div>用户邮箱：{this.state.email}</div>
-                <Child inputRef={this.textInput} inputFocus={this.inputFocus} name="email" email={this.state.email} handleEmail={this.handleEmail.bind(this)}/>
+                <Route exact path='/email' render={(props) => (
+                    <div>
+                        <div>用户邮箱：{this.state.email}</div>
+                        <button><Link to="/email/create" >Create Email</Link></button>
+                    </div>
+                )}>
+                </Route>
+                {/* create */}
+                <Route path={`${this.match.url}/:id`} render={(props) => (
+                     <Child inputRef={this.textInput} inputFocus={this.inputFocus} name="email" email={this.state.email} handleEmail={this.handleEmail.bind(this)}/>
+                )}></Route>
+              
             </div>
         )
     }
