@@ -3,6 +3,15 @@
       "react-app"
     ],
     "plugins": [
-        ["import", {"libraryName": "antd-mobile", "libraryDirectory": "es", "style": "css"}]
+        ["import", {
+          "libraryName": "antd-mobile",
+           "libraryDirectory": "es",
+          "style": "css"
+        },"antd-mobile"],
+        ["import",{
+          "libraryName": "antd",
+          "libraryDirectory": "es",
+          "style": "css" // `style: true` 会加载 less 文件
+        },"andt"]
     ]
   }

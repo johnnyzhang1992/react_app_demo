@@ -21,7 +21,7 @@ const AsyncTodo = AsyncComponent(()=>import('./todo/index'))
 const AsyncEmail = AsyncComponent(() => import('./components/Email'))
 const AsyncClock = AsyncComponent(() => import('./components/Clock'));
 const AsyncEcharts = AsyncComponent(()=>import('./echarts'))
-
+const AsyncAntDemo = AsyncComponent(()=>import('./antd'))
 class App extends Component {
 
 	// 组件更新前调用
@@ -60,7 +60,8 @@ class App extends Component {
 						<NavLink to="/todo" activeClassName="selected" replace>Todo list</NavLink>
 						{/* <NavLink to="/context">Context Demo</NavLink>
 						<NavLink to="/render_props" > Render Props Demo </NavLink> */}
-						<NavLink to = "/echarts" > Echarts</NavLink>
+						<NavLink to="/echarts" > Echarts</NavLink>
+						<NavLink to = "/antd" > AntD Demo</NavLink>
 					</div>
 					<WhiteSpace />
 					{/* router */}
@@ -71,6 +72,7 @@ class App extends Component {
 						{/* <Route path="/context" component={ContextDemo} />
 						<Route path="/render_props" component={MouseTracker}></Route> */}
 						<Route exact path="/echarts" component={AsyncEcharts} />
+						<Route exact path="/antd" component={AsyncAntDemo} />	
 					</Switch>
 				</div>
 			</Router>

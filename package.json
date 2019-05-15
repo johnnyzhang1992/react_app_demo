@@ -73,7 +73,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "antd": "^3.18.1",
     "babel-plugin-import": "^1.11.0",
+    "less-loader": "^5.0.0",
     "prop-types": "^15.7.2",
     "react-addons-perf": "^15.4.2",
     "react-app-rewired": "2.0.2-next.0",
